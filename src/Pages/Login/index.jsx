@@ -28,7 +28,6 @@ import { Delete, Add, Create, Search } from '@material-ui/icons';
 import { TextField, Button } from '@material-ui/core';
 import logo from '../../assets/logo.png'; 
 import api from "../../services/api";
-import { getToken } from "../../services/auth";
 
 
 function Login() {
@@ -47,11 +46,11 @@ function Login() {
       let token =  await api.post('/user/login', data)
       
       localStorage.setItem("Token",JSON.stringify(token.data.token))
-      console.log('123')
       history.push('/Home')     
     }catch(err){
-      history.push('/')
+    
       setMessage('SENHA INCORRETA OU USUÁRIO NÃO EXISTE');
+      history.push('/')
     }
     
   }
