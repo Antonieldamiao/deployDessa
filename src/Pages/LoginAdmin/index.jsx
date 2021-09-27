@@ -36,7 +36,7 @@ function LoginAdmin() {
     }
 
     await api.post('/administrator/login', data).then((resp) =>{
-      localStorage.setItem('tokenAd',JSON.stringify(resp.data))
+      localStorage.setItem('Token',JSON.stringify(resp.data))
       history.push('/HomeAdmin');
     }).catch((err) => {
       setMessage('SENHA ERRADA OU USUÁRIO NÃO')

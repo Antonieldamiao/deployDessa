@@ -79,6 +79,14 @@ function HomeAdmin() {
     })
   }
 
+  const removeUser = async (id) =>{
+    await api.delete(`/user/delete/${id}`).then((resp)=>{
+      alert('USUÁRIO EXCLUIDO');
+      window.location.reload();
+    }).catch((err)=>{
+      alert('ERRO AO EXCLUIR');
+    })
+  }
   useEffect(()=>{
     render();
   }, [0])
@@ -103,7 +111,7 @@ function HomeAdmin() {
     print: false,
     download: false,
     pagination: false,
-    onRowsDelete: () => console.log("deletado"),
+    onRowsDelete:(index) => {removeUser(users[index.data[0].index].id)},
     onRowClick:(index ,rowIndex) => console.log("teds", rowIndex),
     onRowSelectionChange:(index ,rowIndex) => console.log("teste", rowIndex),
     textLabels: {

@@ -23,13 +23,15 @@ function RegisterAccount() {
   function Greeting() {
 
     const registerApi = async () =>{
+      console.log('email', emailRef)
       if(passwordRef.current.value===confirmPassRef.current.value){
         const json = {
           username: nameRef.current.value,
           email: emailRef.current.value,
           password: passwordRef.current.value,
-        }
-        await api.post('user/add', json).then((resp)=> setValidation(true)).catch((err)=>console.log('Erro'))
+        } 
+        console.log('post')
+        await api.post('/user/add', json).then((resp)=> setValidation(true)).catch((err)=>console.log('Erro'))
       }else{
         alert('Senha errada');
       }      

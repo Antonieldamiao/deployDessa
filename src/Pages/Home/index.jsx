@@ -210,7 +210,7 @@ const Home = () => {
   function EditContact() {
     console.log(contact[dd].id)
     const data = {
-      id: contact[4].id,
+      id: contact[dd].id,
       name: nomeEditRef.current.value,
       telephone: telefoneEditRef.current.value,
       token: token
