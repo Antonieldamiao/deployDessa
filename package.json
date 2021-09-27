@@ -1,9 +1,6 @@
 {
   "name": "pw",
   "version": "0.1.0",
-  "engines": {
-     "node": "14.15.3"
-  },
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.3",
@@ -22,7 +19,6 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
